@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import About from '~/components/About'
+import Experience from '~/components/Experience'
 import Navbar from '~/components/Navbar'
 
 export const Route = createFileRoute('/')({
@@ -11,6 +12,7 @@ function App() {
     <main className="flex flex-col items-center justify-start gap-15 min-h-screen ">
       <Navbar />
       <About />
+      <Experience />
     </main>
   )
 }

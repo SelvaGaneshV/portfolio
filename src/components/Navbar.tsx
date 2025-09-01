@@ -29,6 +29,7 @@ function Navbar() {
     const section = document.getElementById(id)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' })
+      setActive(id)
     }
   }
   useEffect(() => {
