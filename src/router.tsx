@@ -1,21 +1,21 @@
 // Import the generated route tree
 
-import reportWebVitals from './reportWebVitals.ts'
 import { createRouter as createTanStackRouter } from '@tanstack/react-router'
+import reportWebVitals from './reportWebVitals.ts'
 import { routeTree } from './routeTree.gen'
 
-export function createRouter() {
+export function getRouter() {
   const router = createTanStackRouter({
     routeTree,
     scrollRestoration: true,
+    scrollRestorationBehavior: 'smooth',
   })
-
   return router
 }
 
 declare module '@tanstack/react-router' {
   interface Register {
-    router: ReturnType<typeof createRouter>
+    router: ReturnType<typeof getRouter>
   }
 }
 

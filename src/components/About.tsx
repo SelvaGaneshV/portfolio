@@ -8,6 +8,7 @@ const skills = [
   'JavaScript',
   'TypeScript',
   'React',
+  'React Native',
   'TailwindCSS',
   'Reactflow',
   'Zustand',
@@ -16,15 +17,15 @@ const skills = [
   'Vite',
   'Tanstack Router',
   'Tanstack Start',
-  'React Query',
-  'React Native',
+  'Tanstack Query',
   'Nest.js',
+  'Hono',
+  'Microservices',
   'Drizzle',
   'SQLite',
   'Redis',
   'Socket.io',
   'Lodash',
-  'Microservices',
 ]
 
 function About() {
@@ -74,7 +75,7 @@ function About() {
               variant={'outline'}
               className="p-2 hover:bg-accent-foreground hover:text-accent "
             >
-              {skill}{' '}
+              {skill}
             </Badge>
           ))}
         </div>

@@ -8,8 +8,12 @@ import { resolve } from 'node:path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    tanstackStart({ customViteReactPlugin: true }),
-    viteReact(),
+    tanstackStart(),
+    viteReact({
+      babel: {
+        plugins: ['babel-plugin-react-compiler'],
+      },
+    }),
     tailwindcss(),
   ],
   resolve: {
