@@ -1,19 +1,20 @@
-import { useId } from "react";
-import { JSX } from "react/jsx-runtime";
+import { Github, Globe, Linkedin } from "lucide-react";
+import React from "react";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
 type LinksBlock = {
   link: string;
   title: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
 };
 type LinkType = LinksBlock[];
 
 type ProjectBlockType = {
   title: string;
   content: string;
-  links: LinkType;
+  icon?: string;
+  links?: LinkType;
 };
 
 type ProjectsType = ProjectBlockType[];
@@ -21,59 +22,59 @@ type ProjectsType = ProjectBlockType[];
 const projects: ProjectsType = [
   {
     title: "Torus",
-    content: "This is a low code app",
+    icon: "https://toruslowcode.com/wp-content/uploads/2023/03/logo-new.svg",
+    content:
+      "Torus Is A General Purpose, Enterprise Grade, Citizenscale Low Code Application Development Platform That Delivers No Lock In Sourcecode Available Beautiful Web & Mobile Application",
     links: [
       {
-        link: "",
-        title: "",
-        icon: <></>,
+        link: "https://toruslowcode.com/",
+        title: "toruslowcode.com",
+        icon: <Globe />,
+      },
+      {
+        link: "https://www.linkedin.com/products/global-software-solutions-tvl-pvt-ltd--torus-low-code-platform/",
+        title: "Torus LinkedIn",
+        icon: <Linkedin />,
+      },
+    ],
+  },
+
+  {
+    title: "ColorCraft Paint Visualizer",
+    content:
+      "A web application for visualizing paint colors on building regions with somewhat realistic texture preservation.",
+    links: [
+      {
+        link: "https://paint-visualizer-chi.vercel.app/",
+        icon: <Globe />,
+        title: "Vezal.db Website",
+      },
+      {
+        link: `${import.meta.env.VITE_GITHUB_URL}paint-visualizer`,
+        icon: <Github />,
+        title: "repo",
       },
     ],
   },
   {
-    title: "Torus",
-    content: "This is a low code app",
-    links: [
-      {
-        link: "",
-        title: "",
-        icon: <></>,
-      },
-    ],
-  },
-  {
-    title: "Torus",
-    content: "This is a low code app",
-    links: [
-      {
-        link: "",
-        title: "",
-        icon: <></>,
-      },
-    ],
-  },
-  {
-    title: "Torus",
-    content: "This is a low code app",
-    links: [
-      {
-        link: "",
-        title: "",
-        icon: <></>,
-      },
-    ],
+    title: "Vezal.db",
+    content:
+      "Visual database exploration with ER diagrams and table views. Built for developers who need to move fast.",
   },
 ];
 
 function Projects() {
   return (
-    <section id="projects" className="grid w-5xl grid-cols-5 gap-4 px-4">
-      <div className="col-span-3 text-start">
-        <h1 className="text-2xl">Projects</h1>
+    <section id="projects" className="mx-auto max-w-5xl px-4 py-8">
+      {/* Header */}
+      <div className="mb-6">
+        <h1 className="text-left text-2xl font-semibold">Projects</h1>
       </div>
-      <div className="col-span-full grid grid-cols-3 gap-1">
-        {projects.map((project) => (
-          <ProjectBlock {...project} />
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, idx) => (
+          <ProjectBlock key={idx} {...project} />
         ))}
       </div>
     </section>
@@ -81,35 +82,36 @@ function Projects() {
 }
 
 function ProjectBlock(section: ProjectBlockType) {
-  const id = useId();
   return (
-    <Card key={id} className="rounded-none transition-colors duration-200 hover:border-primary/20">
+    <Card className="flex h-full flex-col rounded-none transition-colors duration-200 hover:border-primary/20">
       <CardHeader className="space-y-2">
         <CardTitle className="text-lg font-semibold">{section.title}</CardTitle>
-        <CardDescription className="text-sm leading-relaxed">{section.content}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="flex gap-2">
-          {section.links.map((linkItem, linkIdx) => (
-            <Button
-              key={linkIdx}
-              variant="outline"
-              size="icon"
-              className="transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-primary-foreground"
-              asChild
-            >
-              <a
-                href={linkItem.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={linkItem.title}
-              >
-                {linkItem.icon}
-              </a>
-            </Button>
-          ))}
-        </div>
+
+      <CardContent className="flex-1">
+        <CardDescription className="text-sm leading-relaxed">{section.content}</CardDescription>
       </CardContent>
+
+      <CardFooter className="flex gap-2">
+        {section?.links?.map((linkItem, linkIdx) => (
+          <Button
+            key={linkIdx}
+            variant="outline"
+            size="icon"
+            className="transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            asChild
+          >
+            <a
+              href={linkItem.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={linkItem.title}
+            >
+              {linkItem.icon}
+            </a>
+          </Button>
+        ))}
+      </CardFooter>
     </Card>
   );
 }

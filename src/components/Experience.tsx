@@ -1,5 +1,4 @@
 import { Briefcase, Calendar } from "lucide-react";
-import { useId } from "react";
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 type ResponsibilityItem = {
@@ -18,32 +17,11 @@ type ExperienceType = {
 
 const EXP: ExperienceType[] = [
   {
-    postion: "Junior Software Engineer",
+    postion: "Software Engineer",
     from: "Oct,2023",
     to: "present",
     company: "Torus Innovations",
     responsibilty: [
-      // [
-      //   'Developed the frontend UI and core logic for a ',
-      //   {
-      //     content: 'drag-and-drop low-code platform',
-      //     className:
-      //       'text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150',
-      //   },
-      //   ', enabling dynamic layout creation, reliable ',
-      //   {
-      //     content: 'data saving',
-      //     className:
-      //       'text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150',
-      //   },
-      //   ' and robust ',
-      //   {
-      //     content: 'validation',
-      //     className:
-      //       'text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150',
-      //   },
-      //   '.',
-      // ],
       [
         "Contributed to a ",
         {
@@ -221,13 +199,16 @@ const EXP: ExperienceType[] = [
 
 function Experience() {
   return (
-    <section id="experience" className="grid w-5xl grid-cols-5 gap-4 px-4">
-      <div className="col-span-3 text-start">
-        <h1 className="text-2xl">Experience</h1>
+    <section id="experience" className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10">
+      {/* Heading */}
+      <div className="text-start">
+        <h1 className="text-2xl font-semibold sm:text-3xl">Experience</h1>
       </div>
-      <div className="col-span-full flex w-full flex-col items-start gap-1">
-        {EXP.map((experience) => (
-          <ExperienceBlock {...experience} />
+
+      {/* Experience list */}
+      <div className="flex w-full flex-col gap-4">
+        {EXP.map((experience, idx) => (
+          <ExperienceBlock key={idx} {...experience} />
         ))}
       </div>
     </section>
@@ -235,26 +216,31 @@ function Experience() {
 }
 
 function ExperienceBlock(block: ExperienceType) {
-  const id = useId();
   return (
-    <Card key={id} className="w-[80%] border-none transition-shadow duration-300 hover:shadow-lg">
+    <Card className="w-full border-none transition-shadow duration-300 hover:shadow-lg sm:w-[90%] lg:w-[80%]">
       <CardHeader>
-        <div className="flex flex-wrap items-start justify-between gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex-1">
-            <CardTitle className="mb-2 text-2xl">{block.postion}</CardTitle>
+            <CardTitle className="mb-2 text-xl sm:text-2xl">{block.postion}</CardTitle>
+
             <div className="flex items-center gap-2">
               <Briefcase className="h-4 w-4 text-muted-foreground" />
               <span className="font-medium text-muted-foreground">{block.company}</span>
             </div>
           </div>
-          <Badge variant="secondary" className="flex items-center gap-2">
+
+          <Badge variant="secondary" className="flex w-fit items-center gap-2">
             <Calendar className="h-3 w-3" />
-            {block.from} - {block.to}
+            {block.from} – {block.to}
           </Badge>
         </div>
       </CardHeader>
-      <CardContent className="pt-6">
-        <h3 className="mb-3 text-sm font-semibold tracking-wide uppercase">Key Responsibilities</h3>
+
+      <CardContent className="pt-4 sm:pt-6">
+        <h3 className="mb-3 text-xs font-semibold tracking-wide uppercase sm:text-sm">
+          Key Responsibilities
+        </h3>
+
         <ul className="space-y-3">
           {block.responsibilty.map((resp, respIdx) => (
             <li key={respIdx} className="flex items-start gap-3">
