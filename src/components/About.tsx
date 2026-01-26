@@ -61,7 +61,7 @@ function About() {
 
           <div className="mt-3 flex items-center gap-1 text-sm text-accent-foreground/60">
             <MapPin size="0.875rem" />
-            <span>Tirunelveli, Tamil Nadu,India</span>
+            <span>Tirunelveli, Tamil Nadu, India</span>
           </div>
         </div>
 

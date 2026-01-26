@@ -22,7 +22,7 @@ function Navbar() {
   return (
     <div className="sticky top-0 right-0 left-0 z-50 flex justify-center px-3 pt-3 sm:px-6 sm:pt-8">
       <header className="w-full max-w-3xl xl:max-w-5xl 2xl:max-w-6xl">
-        <div className="mx-auto w-full rounded-full border border-accent/50 bg-background/35 px-2 py-2 shadow-2xl shadow-black/40 backdrop-blur-2xl transition-all duration-300 hover:border-accent hover:bg-background/45 hover:shadow-black/60 sm:w-fit sm:px-6 sm:py-3">
+        <div className="mx-auto w-full rounded-full border border-accent/50 px-2 py-2 shadow-2xl shadow-black/40 backdrop-blur-md transition-all duration-300 hover:border-accent hover:bg-background/45 hover:shadow-black/60 sm:w-fit sm:px-6 sm:py-3">
           <nav className="scrollbar-none flex items-center gap-2 overflow-x-auto text-sm whitespace-nowrap sm:gap-6">
             {sections.map((id) => (
               <Button
@@ -32,7 +32,7 @@ function Navbar() {
                 }}
                 variant="ghost"
                 className={cn(
-                  `shrink-0 rounded-full px-3 py-2 font-medium tracking-tight text-white capitalize transition-all duration-200`,
+                  `shrink-0 rounded-full px-3 py-2 font-medium tracking-tight capitalize transition-all duration-200`,
                   {
                     "bg-accent text-accent-foreground": active === id,
                   },

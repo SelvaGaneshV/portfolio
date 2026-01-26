@@ -217,7 +217,7 @@ function Experience() {
 
 function ExperienceBlock(block: ExperienceType) {
   return (
-    <Card className="w-full border-none transition-shadow duration-300 hover:shadow-lg sm:w-[90%] lg:w-[80%]">
+    <Card className="w-full border-none shadow-none  sm:w-[90%] lg:w-[80%]">
       <CardHeader>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex-1">
