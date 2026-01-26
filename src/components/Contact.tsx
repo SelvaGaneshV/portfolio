@@ -1,5 +1,5 @@
 function Contact() {
-  return <footer id="contact">Contact</footer>
+  return <footer id="contact">Contact</footer>;
 }
 
-export default Contact
+export default Contact;
