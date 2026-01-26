@@ -49,8 +49,9 @@ function About() {
 
         <div className="col-span-1 text-start md:row-span-3">
           <p className="text-justify text-base leading-7">
-            Hi, I'm a developer 👨‍💻 working on a low-code platform at <b>Torus Innovations</b>. I
-            love building things that make life easier and more fun 🚀.
+            Hi, I’m a developer 👨‍💻 currently building a low-code platform at {" "}
+            <b>Torus Innovations</b>. I love turning ideas into products that make everyday work
+            easier and more enjoyable 🚀.
           </p>
 
           <br />
