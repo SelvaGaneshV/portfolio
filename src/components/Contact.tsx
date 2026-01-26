@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 
 function Contact() {
