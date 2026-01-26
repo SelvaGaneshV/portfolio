@@ -40,14 +40,14 @@ function About() {
   return (
     <section id="about" className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10">
       {/* Top content */}
-      <div className="grid grid-cols-1 gap-8 border-b py-6 md:grid-cols-5">
+      <div className="grid grid-cols-1 gap-8 border-b py-6 md:grid-rows-6">
         {/* Heading */}
-        <div className="text-start md:col-span-2">
+        <div className="col-span-1 text-start md:row-span-2">
           <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl">Selva Ganesh</h1>
           <p className="mt-2 leading-tight text-muted-foreground">Software Engineer</p>
         </div>
 
-        <div className="text-start md:col-span-3">
+        <div className="col-span-1 text-start md:row-span-3">
           <p className="text-justify text-base leading-7">
             Hi, I'm a developer 👨‍💻 working on a low-code platform at <b>Torus Innovations</b>. I
             love building things that make life easier and more fun 🚀.
@@ -65,7 +65,7 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 sm:flex-row md:col-span-5">
+        <div className="flex flex-col gap-3 sm:flex-row md:row-span-1">
           <Button
             onClick={() =>
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
