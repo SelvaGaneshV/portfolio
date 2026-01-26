@@ -24,7 +24,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",
-    "nitro-nightly": "3.0.1-20260125-215009-8882bc9e",
+    "nitro": "3.0.1-alpha.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tailwind-merge": "^3.4.0",
@@ -47,5 +47,5 @@
     "vitest": "^4.0.18",
     "web-vitals": "^5.1.0"
   },
-  "packageManager": "pnpm@10.2.8"
+  "packageManager": "pnpm@10.28.1"
 }

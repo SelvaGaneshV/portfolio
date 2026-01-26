@@ -3,7 +3,7 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { resolve } from "node:path";
-import { nitro } from "nitro-nightly/vite";
+import { nitro } from "nitro/vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
