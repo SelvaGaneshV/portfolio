@@ -4,6 +4,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import type { ReactNode } from "react";
 import { ThemeProvider, useHtmlClass } from "~/components/ThemeProvider";
 import appCss from "../styles.css?url";
+import { Analytics } from "@vercel/analytics/react";
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -47,6 +48,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       </head>
       <body>
         {children}
+        <Analytics />
         <TanStackDevtools
           config={{
             position: "bottom-left",
