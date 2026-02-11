@@ -33,19 +33,19 @@ const EXP: ExperienceType[] = [
         {
           content: "resize",
           className:
-            "text-foreground font-semibold hover:text-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         ", ",
         {
           content: "drag",
           className:
-            "text-foreground font-semibold hover:text-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         " and ",
         {
           content: "nested grouping",
           className:
-            "text-foreground font-semibold hover:text-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         " for rich web editing.",
       ],
@@ -60,7 +60,7 @@ const EXP: ExperienceType[] = [
         {
           content: "process flows",
           className:
-            "text-foreground font-semibold hover:text-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         " used by generated applications.",
       ],
@@ -75,7 +75,7 @@ const EXP: ExperienceType[] = [
         {
           content: "API generation",
           className:
-            "text-foreground font-semibold hover:text-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         " and reduce manual integration work.",
       ],
@@ -90,19 +90,19 @@ const EXP: ExperienceType[] = [
         {
           content: "dropdowns",
           className:
-            "text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
         },
         ", ",
         {
           content: "icon search",
           className:
-            "text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
         },
         " and ",
         {
           content: "file upload",
           className:
-            "text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
         },
         ".",
       ],
@@ -111,7 +111,7 @@ const EXP: ExperienceType[] = [
         {
           content: "dynamic validation",
           className:
-            "text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
         },
         " for nested user data structures using ",
         {
@@ -132,7 +132,7 @@ const EXP: ExperienceType[] = [
         {
           content: "artifact locking",
           className:
-            "text-foreground font-semibold hover:text-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         ", preventing concurrent edit conflicts.",
       ],
@@ -177,19 +177,19 @@ const EXP: ExperienceType[] = [
         {
           content: "fetching",
           className:
-            "text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
         },
         ", ",
         {
           content: "saving",
           className:
-            "text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 font-semibold hover:underline transition-colors duration-150",
         },
         " and ",
         {
           content: "validation",
           className:
-            "text-accent-foreground font-semibold hover:text-accent-foreground/80 hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
         },
         " across tenants.",
       ],
@@ -199,7 +199,10 @@ const EXP: ExperienceType[] = [
 
 function Experience() {
   return (
-    <section id="experience" className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10">
+    <section
+      id="experience"
+      className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10"
+    >
       {/* Heading */}
       <div className="text-start">
         <h1 className="text-2xl font-semibold sm:text-3xl">Experience</h1>
@@ -217,15 +220,19 @@ function Experience() {
 
 function ExperienceBlock(block: ExperienceType) {
   return (
-    <Card className="w-full border-none shadow-none  sm:w-[90%] lg:w-[80%]">
+    <Card className="w-full border-none shadow-none  ">
       <CardHeader>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex-1">
-            <CardTitle className="mb-2 text-xl sm:text-2xl">{block.postion}</CardTitle>
+            <CardTitle className="mb-2 text-xl sm:text-2xl">
+              {block.postion}
+            </CardTitle>
 
             <div className="flex items-center gap-2">
               <Briefcase className="h-4 w-4 text-muted-foreground" />
-              <span className="font-medium text-muted-foreground">{block.company}</span>
+              <span className="font-medium text-muted-foreground">
+                {block.company}
+              </span>
             </div>
           </div>
 
