@@ -1,17 +1,25 @@
 import { Briefcase, Calendar } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Separator } from "./ui/separator";
 type ResponsibilityItem = {
   content: string;
   className: string;
 };
+
+interface Company {
+  name: string;
+  link: string;
+  icon?: string;
+}
+
 type ResponsibilityType = (ResponsibilityItem | string)[][];
 
 type ExperienceType = {
   postion: string;
   from: string;
   to: string;
-  company: string;
+  company: Company;
   responsibilty: ResponsibilityType;
 };
 
@@ -20,7 +28,10 @@ const EXP: ExperienceType[] = [
     postion: "Software Engineer",
     from: "Oct,2023",
     to: "present",
-    company: "Torus Innovations",
+    company: {
+      link: "https://toruslowcode.com/",
+      name: "Torus Innovations",
+    },
     responsibilty: [
       [
         "Contributed to a ",
@@ -214,6 +225,7 @@ function Experience() {
           <ExperienceBlock key={idx} {...experience} />
         ))}
       </div>
+      <Separator />
     </section>
   );
 }
@@ -230,9 +242,14 @@ function ExperienceBlock(block: ExperienceType) {
 
             <div className="flex items-center gap-2">
               <Briefcase className="h-4 w-4 text-muted-foreground" />
-              <span className="font-medium text-muted-foreground">
-                {block.company}
-              </span>
+              <a
+                href={block.company.link}
+                className="font-medium text-muted-foreground hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {block.company.name}
+              </a>
             </div>
           </div>
 

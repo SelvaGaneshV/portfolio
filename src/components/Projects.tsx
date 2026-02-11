@@ -1,7 +1,14 @@
 import { Github, Globe, Linkedin } from "lucide-react";
 import React from "react";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type LinksBlock = {
   link: string;
@@ -47,7 +54,7 @@ const projects: ProjectsType = [
       {
         link: "https://paint-visualizer-chi.vercel.app/",
         icon: <Globe />,
-        title: "Vezal.db Website",
+        title: "ColorCraft Paint Visualizer Website",
       },
       {
         link: `${import.meta.env.VITE_GITHUB_URL}paint-visualizer`,
@@ -65,14 +72,17 @@ const projects: ProjectsType = [
 
 function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-5xl px-4 py-8">
+    <section
+      id="projects"
+      className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10"
+    >
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-left text-2xl font-semibold">Projects</h1>
+        <h1 className="text-2xl font-semibold sm:text-3xl">Projects</h1>
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
         {projects.map((project, idx) => (
           <ProjectBlock key={idx} {...project} />
         ))}
@@ -83,13 +93,15 @@ function Projects() {
 
 function ProjectBlock(section: ProjectBlockType) {
   return (
-    <Card className="flex h-full flex-col rounded-none transition-colors duration-200 hover:border-primary/20">
+    <Card className="flex h-full w-full  flex-col   transition-colors duration-200 hover:border-primary/20">
       <CardHeader className="space-y-2">
         <CardTitle className="text-lg font-semibold">{section.title}</CardTitle>
       </CardHeader>
 
       <CardContent className="flex-1">
-        <CardDescription className="text-sm leading-relaxed">{section.content}</CardDescription>
+        <CardDescription className="text-sm leading-relaxed">
+          {section.content}
+        </CardDescription>
       </CardContent>
 
       <CardFooter className="flex gap-2">

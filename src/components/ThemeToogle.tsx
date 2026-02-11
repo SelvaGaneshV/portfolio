@@ -3,7 +3,7 @@ import { useTheme } from "./ThemeProvider";
 import { Button } from "./ui/button";
 
 export function ThemeToggleButton() {
-  const { resolvedTheme, toggleMode } = useTheme();
+  const { themeMode, toggleMode } = useTheme();
 
   return (
     <Button
@@ -13,7 +13,11 @@ export function ThemeToggleButton() {
       aria-label="Toggle theme"
       className="rounded-full"
     >
-      {resolvedTheme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      {themeMode === "dark" ? (
+        <Sun className="h-5 w-5" />
+      ) : (
+        <Moon className="h-5 w-5" />
+      )}
     </Button>
   );
 }

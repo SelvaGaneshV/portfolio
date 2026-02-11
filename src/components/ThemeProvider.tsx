@@ -37,7 +37,9 @@ const getSystemTheme = createIsomorphicFn()
   .server((): ResolvedTheme => "light")
   .client(
     (): ResolvedTheme =>
-      window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light",
   );
 
 /* ------------------ DOM helpers ------------------ */
@@ -78,14 +80,17 @@ type ThemeProviderProps = {
 const getResolvedThemeFromDOM = createIsomorphicFn()
   .server((): ResolvedTheme => "light")
   .client(
-    (): ResolvedTheme => (document.documentElement.classList.contains("dark") ? "dark" : "light"),
+    (): ResolvedTheme =>
+      document.documentElement.classList.contains("dark") ? "dark" : "light",
   );
 
 /* ------------------ Provider ------------------ */
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [themeMode, setThemeMode] = useState<ThemeMode>(getStoredThemeMode);
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(getResolvedThemeFromDOM);
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(
+    getResolvedThemeFromDOM,
+  );
 
   // Listen for system theme changes in auto mode
   useEffect(() => {
@@ -113,7 +118,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   };
 
   return (
-    <ThemeContext.Provider value={{ themeMode, resolvedTheme, setTheme, toggleMode }}>
+    <ThemeContext.Provider
+      value={{ themeMode, resolvedTheme, setTheme, toggleMode }}
+    >
       {children}
     </ThemeContext.Provider>
   );
