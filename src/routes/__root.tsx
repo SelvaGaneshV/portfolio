@@ -16,7 +16,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Selva Ganesh - Full Stack Developer",
+        title: "Selva Ganesh V - Full Stack Developer",
       },
       {
         name: "description",
@@ -25,7 +25,7 @@ export const Route = createRootRoute({
       },
       {
         name: "author",
-        content: "Selva Ganesh",
+        content: "Selva Ganesh V",
       },
       {
         name: "keywords",
@@ -42,7 +42,7 @@ export const Route = createRootRoute({
       },
       {
         property: "og:title",
-        content: "Selva Ganesh - Full Stack Developer",
+        content: "Selva Ganesh V - Full Stack Developer",
       },
       {
         property: "og:description",
@@ -63,7 +63,7 @@ export const Route = createRootRoute({
       },
       {
         property: "og:site_name",
-        content: "Selva Ganesh Portfolio",
+        content: "Selva Ganesh V Portfolio",
       },
       {
         name: "twitter:card",
@@ -103,7 +103,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "canonical",
-        href: "https://selvaganesh.dev",
+        href: "https://selvaganeshv.vercel.app",
       },
       {
         rel: "manifest",
@@ -116,12 +116,15 @@ export const Route = createRootRoute({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "Selva Ganesh",
+          name: "Selva Ganesh V",
           url: "https://selvaganeshv.vercel.app",
           jobTitle: "Full Stack Developer",
           description:
             "Full Stack Developer specializing in React, TypeScript, Node.js, and modern web technologies",
-          sameAs: [import.meta.env.VITE_GITHUB_URL, import.meta.env.VITE_LINKEDIN_URL],
+          sameAs: [
+            import.meta.env.VITE_GITHUB_URL,
+            import.meta.env.VITE_LINKEDIN_URL,
+          ],
           knowsAbout: [
             "React",
             "TypeScript",
