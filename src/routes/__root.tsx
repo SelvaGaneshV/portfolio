@@ -16,7 +16,79 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Selva Ganesh",
+        title: "Selva Ganesh - Full Stack Developer",
+      },
+      {
+        name: "description",
+        content:
+          "Full Stack Developer specializing in React, TypeScript, Node.js, and modern web technologies. View my projects, experience, and skills.",
+      },
+      {
+        name: "author",
+        content: "Selva Ganesh",
+      },
+      {
+        name: "keywords",
+        content:
+          "full stack developer, React developer, TypeScript, Node.js, web development, frontend developer, backend developer, portfolio",
+      },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        name: "theme-color",
+        content: "#000000",
+      },
+      {
+        property: "og:title",
+        content: "Selva Ganesh - Full Stack Developer",
+      },
+      {
+        property: "og:description",
+        content:
+          "Full Stack Developer specializing in React, TypeScript, Node.js, and modern web technologies.",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: "https://selvaganeshv.vercel.app",
+      },
+      {
+        property: "og:locale",
+        content: "en_US",
+      },
+      {
+        property: "og:site_name",
+        content: "Selva Ganesh Portfolio",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:site",
+        content: "@selvaganeshv",
+      },
+      {
+        name: "twitter:title",
+        content: "Selva Ganesh - Full Stack Developer",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Full Stack Developer specializing in React, TypeScript, Node.js, and modern web technologies.",
+      },
+      {
+        name: "twitter:creator",
+        content: "@selvaganeshv",
+      },
+      {
+        name: "linkedin:profile",
+        content: "selvaganeshv",
       },
     ],
     links: [
@@ -25,8 +97,42 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@500&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@1,100..700&family=Slackside+One&display=swap",
       },
+      {
+        rel: "icon",
+        href: "/favicon.ico",
+      },
+      {
+        rel: "canonical",
+        href: "https://selvaganesh.dev",
+      },
+      {
+        rel: "manifest",
+        href: "/manifest.json",
+      },
     ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Selva Ganesh",
+          url: "https://selvaganeshv.vercel.app",
+          jobTitle: "Full Stack Developer",
+          description:
+            "Full Stack Developer specializing in React, TypeScript, Node.js, and modern web technologies",
+          sameAs: [import.meta.env.VITE_GITHUB_URL, import.meta.env.VITE_LINKEDIN_URL],
+          knowsAbout: [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "JavaScript",
+            "Web Development",
+            "Frontend Development",
+            "Backend Development",
+          ],
+        }),
+      },
       {
         children: `(function(){try{var t=localStorage.getItem('theme')||'auto';var v=['light','dark','auto'].includes(t)?t:'auto';if(v==='auto'){var a=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.classList.add(a,'auto')}else{document.documentElement.classList.add(v)}}catch(e){var a=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.classList.add(a,'auto')}})()`,
       },
