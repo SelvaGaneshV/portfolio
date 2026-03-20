@@ -1,13 +1,11 @@
 import { createClientOnlyFn, createIsomorphicFn } from "@tanstack/react-start";
-import * as React from "react";
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
 const themeKey = "theme";
 
 /* ------------------ Types ------------------ */
 
 type ThemeMode = "light" | "dark" | "auto";
-type ResolvedTheme = "light" | "dark";
 
 const isThemeMode = (value: unknown): value is ThemeMode =>
   value === "light" || value === "dark" || value === "auto";
@@ -34,9 +32,9 @@ const setStoredThemeMode = createClientOnlyFn((theme: ThemeMode) => {
 /* ------------------ System Theme ------------------ */
 
 const getSystemTheme = createIsomorphicFn()
-  .server((): ResolvedTheme => "light")
+  .server((): "light" | "dark" => "light")
   .client(
-    (): ResolvedTheme =>
+    (): "light" | "dark" =>
       window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light",
@@ -66,7 +64,6 @@ const getNextTheme = createClientOnlyFn((current: ThemeMode): ThemeMode => {
 
 type ThemeContextProps = {
   themeMode: ThemeMode;
-  resolvedTheme: ResolvedTheme;
   setTheme: (theme: ThemeMode) => void;
   toggleMode: () => void;
 };
@@ -77,20 +74,10 @@ type ThemeProviderProps = {
   children: ReactNode;
 };
 
-const getResolvedThemeFromDOM = createIsomorphicFn()
-  .server((): ResolvedTheme => "light")
-  .client(
-    (): ResolvedTheme =>
-      document.documentElement.classList.contains("dark") ? "dark" : "light",
-  );
-
 /* ------------------ Provider ------------------ */
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [themeMode, setThemeMode] = useState<ThemeMode>(getStoredThemeMode);
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(
-    getResolvedThemeFromDOM,
-  );
 
   // Listen for system theme changes in auto mode
   useEffect(() => {
@@ -99,7 +86,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handler = () => {
       updateThemeClass("auto");
-      setResolvedTheme(getSystemTheme());
     };
 
     mediaQuery.addEventListener("change", handler);
@@ -110,7 +96,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     setThemeMode(newTheme);
     setStoredThemeMode(newTheme);
     updateThemeClass(newTheme);
-    setResolvedTheme(newTheme === "auto" ? getSystemTheme() : newTheme);
   };
 
   const toggleMode = () => {
@@ -119,7 +104,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   return (
     <ThemeContext.Provider
-      value={{ themeMode, resolvedTheme, setTheme, toggleMode }}
+      value={{ themeMode, setTheme, toggleMode }}
     >
       {children}
     </ThemeContext.Provider>
@@ -129,7 +114,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 /* ------------------ Hooks ------------------ */
 
 export const useTheme = () => {
-  const context = React.useContext(ThemeContext);
+  const context = useContext(ThemeContext);
   if (!context) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
