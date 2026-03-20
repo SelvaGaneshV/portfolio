@@ -215,7 +215,7 @@ function Experience() {
       className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10"
     >
       <div className="text-start">
-        <h1 className="text-2xl font-semibold sm:text-3xl">Experience</h1>
+        <h2 className="text-2xl font-semibold sm:text-3xl">Experience</h2>
       </div>
 
       <div className="flex w-full flex-col gap-4">

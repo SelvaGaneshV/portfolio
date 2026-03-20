@@ -6,7 +6,7 @@ function Contact() {
     <footer id="contact" className="mx-auto max-w-5xl px-4 py-10">
       <div className="grid gap-8 sm:gap-10 md:grid-cols-3">
         <div>
-          <h3 className="text-xl font-semibold">Selva Ganesh</h3>
+          <h2 className="text-xl font-semibold">Selva Ganesh</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Software Engineer building scalable web apps and clean UI
             experiences.

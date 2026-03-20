@@ -88,7 +88,7 @@ function About() {
       </div>
       <Separator />
       <div className="flex flex-col gap-4  py-6 text-start">
-        <h4 className="text-lg font-bold">Specialized in</h4>
+        <h2 className="text-lg font-bold">Specialized in</h2>
 
         <div className="flex flex-wrap gap-2">
           {skills.map((skill) => (
