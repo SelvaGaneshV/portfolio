@@ -2,7 +2,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import type { ReactNode } from "react";
-import { ThemeProvider, useHtmlClass } from "~/components/ThemeProvider";
+import { ThemeProvider } from "~/components/ThemeProvider";
 import appCss from "../styles.css?url";
 import { Analytics } from "@vercel/analytics/react";
 export const Route = createRootRoute({
@@ -149,9 +149,8 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
-  const htmlClass = useHtmlClass();
   return (
-    <html lang="en" className={htmlClass} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

@@ -136,11 +136,3 @@ export const useTheme = () => {
   return context;
 };
 
-// Returns the class string for <html>
-const getHtmlClass = createIsomorphicFn()
-  .server(() => "")
-  .client(() => document.documentElement.className);
-
-export function useHtmlClass(): string {
-  return getHtmlClass();
-}
