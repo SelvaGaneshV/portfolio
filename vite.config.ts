@@ -13,7 +13,11 @@ export default defineConfig({
       removeDevtoolsOnBuild: true,
     }),
     nitro(),
-    tanstackStart(),
+    tanstackStart({
+      prerender: {
+        enabled: true,
+      },
+    }),
     viteReact(),
     babel({
       presets: [reactCompilerPreset()],
