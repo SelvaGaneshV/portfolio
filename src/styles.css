@@ -1,5 +1,11 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/jetbrains-mono';
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  src: url('@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: optional;
+}
 
 @import 'tw-animate-css';
 

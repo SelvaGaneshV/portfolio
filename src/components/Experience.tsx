@@ -214,12 +214,10 @@ function Experience() {
       id="experience"
       className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10"
     >
-      {/* Heading */}
       <div className="text-start">
         <h1 className="text-2xl font-semibold sm:text-3xl">Experience</h1>
       </div>
 
-      {/* Experience list */}
       <div className="flex w-full flex-col gap-4">
         {EXP.map((experience, idx) => (
           <ExperienceBlock key={idx} {...experience} />

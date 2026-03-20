@@ -76,12 +76,10 @@ function Projects() {
       id="projects"
       className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10"
     >
-      {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-semibold sm:text-3xl">Projects</h1>
       </div>
 
-      {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
         {projects.map((project, idx) => (
           <ProjectBlock key={idx} {...project} />
@@ -115,6 +113,7 @@ function ProjectBlock(section: ProjectBlockType) {
           >
             <a
               href={linkItem.link}
+              aria-label={linkItem.title}
               target="_blank"
               rel="noopener noreferrer"
               title={linkItem.title}

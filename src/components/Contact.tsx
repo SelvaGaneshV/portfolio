@@ -5,17 +5,18 @@ function Contact() {
   return (
     <footer id="contact" className="mx-auto max-w-5xl px-4 py-10">
       <div className="grid gap-8 sm:gap-10 md:grid-cols-3">
-        {/* About */}
         <div>
           <h3 className="text-xl font-semibold">Selva Ganesh</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            Software Engineer building scalable web apps and clean UI experiences.
+            Software Engineer building scalable web apps and clean UI
+            experiences.
           </p>
         </div>
 
-        {/* Contact */}
         <div>
-          <h4 className="mb-3 text-sm font-semibold tracking-wide uppercase">Contact</h4>
+          <h3 className="mb-3 text-sm font-semibold tracking-wide uppercase">
+            Contact
+          </h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
@@ -39,19 +40,30 @@ function Contact() {
           </ul>
         </div>
 
-        {/* Social */}
         <div>
-          <h4 className="mb-3 text-sm font-semibold tracking-wide uppercase">Connect</h4>
+          <h3 className="mb-3 text-sm font-semibold tracking-wide uppercase">
+            Connect
+          </h3>
 
           <div className="flex gap-3">
             <Button variant="outline" size="icon" asChild>
-              <a href={import.meta.env.VITE_GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              <a
+                href={import.meta.env.VITE_GITHUB_URL}
+                target="_blank"
+                aria-label="github"
+                rel="noopener noreferrer"
+              >
                 <Github className="h-4 w-4" />
               </a>
             </Button>
 
             <Button variant="outline" size="icon" asChild>
-              <a href={import.meta.env.VITE_LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+              <a
+                href={import.meta.env.VITE_LINKEDIN_URL}
+                target="_blank"
+                aria-label="linkedin"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="h-4 w-4" />
               </a>
             </Button>
@@ -59,7 +71,6 @@ function Contact() {
         </div>
       </div>
 
-      {/* Bottom */}
       <div className="mt-10 border-t pt-4 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Selva Ganesh. All rights reserved.
       </div>

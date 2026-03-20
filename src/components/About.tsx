@@ -40,9 +40,7 @@ function About() {
   };
   return (
     <section id="about" className="mx-auto flex max-w-5xl flex-col  px-4 py-10">
-      {/* Top content */}
       <div className="grid grid-cols-1 gap-8  py-6 md:grid-rows-6">
-        {/* Heading */}
         <div className="col-span-1 text-start md:row-span-2">
           <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl">
             Selva Ganesh
