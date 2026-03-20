@@ -4,7 +4,7 @@
   src: url('@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
   font-weight: 100 800;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 @import 'tw-animate-css';

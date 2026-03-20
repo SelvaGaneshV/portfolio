@@ -4,6 +4,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "~/components/ThemeProvider";
 import appCss from "../styles.css?url";
+import jetbrainsMonoUrl from "@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url";
 import { Analytics } from "@vercel/analytics/react";
 export const Route = createRootRoute({
   head: () => ({
@@ -93,6 +94,13 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      {
+        rel: "preload",
+        href: jetbrainsMonoUrl,
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "icon",
         href: "/favicon.ico",
