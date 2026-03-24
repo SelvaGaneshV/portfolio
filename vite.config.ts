@@ -8,7 +8,12 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      prerender: {
+        enabled: true,
+        crawlLinks: false,
+      },
+    }),
     nitro(),
     viteReact(),
     babel({
