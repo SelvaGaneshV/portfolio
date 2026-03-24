@@ -1,9 +1,13 @@
 import { Moon, Sun, SunMoon } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useTheme } from "./ThemeProvider";
 import { Button } from "./ui/button";
 
 export function ThemeToggleButton() {
   const { themeMode, toggleMode } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <Button
@@ -13,7 +17,7 @@ export function ThemeToggleButton() {
       aria-label="Toggle theme"
       className="rounded-full"
     >
-      {themeMode === "auto" ? (
+      {!mounted || themeMode === "auto" ? (
         <SunMoon className="h-5 w-5" />
       ) : themeMode === "dark" ? (
         <Sun className="h-5 w-5" />
