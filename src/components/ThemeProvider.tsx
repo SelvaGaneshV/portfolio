@@ -1,5 +1,11 @@
 import { createClientOnlyFn, createIsomorphicFn } from "@tanstack/react-start";
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const themeKey = "theme";
 
@@ -32,12 +38,11 @@ const setStoredThemeMode = createClientOnlyFn((theme: ThemeMode) => {
 /* ------------------ System Theme ------------------ */
 
 const getSystemTheme = createIsomorphicFn()
-  .server((): "light" | "dark" => "light")
-  .client(
-    (): "light" | "dark" =>
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light",
+  .server((): "light" | "dark" => "dark")
+  .client((): "light" | "dark" =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light",
   );
 
 /* ------------------ DOM helpers ------------------ */
@@ -79,15 +84,6 @@ type ThemeProviderProps = {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [themeMode, setThemeMode] = useState<ThemeMode>(getStoredThemeMode);
 
-  // Sync state with localStorage after hydration (server renders "auto", client may differ)
-  useEffect(() => {
-    const stored = getStoredThemeMode();
-    if (stored !== themeMode) {
-      setThemeMode(stored);
-    }
-  }, []);
-
-  // Listen for system theme changes in auto mode
   useEffect(() => {
     if (themeMode !== "auto") return;
 
@@ -111,9 +107,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   };
 
   return (
-    <ThemeContext.Provider
-      value={{ themeMode, setTheme, toggleMode }}
-    >
+    <ThemeContext.Provider value={{ themeMode, setTheme, toggleMode }}>
       {children}
     </ThemeContext.Provider>
   );
@@ -128,4 +122,3 @@ export const useTheme = () => {
   }
   return context;
 };
-
