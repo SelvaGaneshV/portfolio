@@ -208,7 +208,7 @@ export const Route = createRootRoute({
   }),
   shellComponent: ({ children }) => (
     <ThemeProvider>
-      <RootDocument>{children} </RootDocument>
+      <RootDocument>{children}</RootDocument>
     </ThemeProvider>
   ),
 });
@@ -222,7 +222,6 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <body>
         {children}
         <Analytics />
-
         <Scripts />
       </body>
     </html>
