@@ -1,11 +1,12 @@
+import jetbrainsMonoUrl from "@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { Analytics } from "@vercel/analytics/react";
 import type { ReactNode } from "react";
+import { skills } from "~/components/About";
 import { ThemeProvider } from "~/components/ThemeProvider";
 import appCss from "../styles.css?url";
-import jetbrainsMonoUrl from "@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url";
-import { Analytics } from "@vercel/analytics/react";
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -183,25 +184,7 @@ export const Route = createRootRoute({
               import.meta.env.VITE_LINKEDIN_URL,
             ].filter(Boolean),
             knowsAbout: [
-              "HTML",
-              "CSS",
-              "JavaScript",
-              "TypeScript",
-              "React",
-              "React Native",
-              "TailwindCSS",
-              "Vite",
-              "TanStack Router",
-              "TanStack Start",
-              "TanStack Query",
-              "Nest.js",
-              "Hono",
-              "Microservices",
-              "Drizzle ORM",
-              "SQLite",
-              "Redis",
-              "Socket.io",
-              "Web Development",
+              ...skills,
               "Frontend Development",
               "Backend Development",
             ],

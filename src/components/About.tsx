@@ -3,7 +3,7 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
-const skills = [
+export const skills = [
   "HTML",
   "CSS",
   "JavaScript",
@@ -30,14 +30,6 @@ const skills = [
 ];
 
 function About() {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/cv_2026.pdf";
-    link.download = "Selva_Ganesh_CV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   return (
     <section id="about" className="mx-auto flex max-w-5xl flex-col  px-4 py-10">
       <div className="grid grid-cols-1 gap-8  py-6 md:grid-rows-6">
@@ -81,8 +73,10 @@ function About() {
             Let’s work together
           </Button>
 
-          <Button variant="outline" onClick={handleDownload}>
-            Download CV
+          <Button variant="outline" asChild>
+            <a href="/cv_2026.pdf" download="Selva_Ganesh_CV.pdf">
+              Download CV
+            </a>
           </Button>
         </div>
       </div>

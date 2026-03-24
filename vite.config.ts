@@ -1,11 +1,10 @@
-import { defineConfig } from "vite";
-import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import { devtools } from "@tanstack/devtools-vite";
-import { resolve } from "node:path";
-import { nitro } from "nitro/vite";
 import babel from "@rolldown/plugin-babel";
+import tailwindcss from "@tailwindcss/vite";
+import { devtools } from "@tanstack/devtools-vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
+import { nitro } from "nitro/vite";
+import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -16,6 +15,7 @@ export default defineConfig({
     tanstackStart({
       prerender: {
         enabled: true,
+        crawlLinks: false,
       },
     }),
     viteReact(),
@@ -25,8 +25,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   resolve: {
-    alias: {
-      "~": resolve(__dirname, "./src"),
-    },
+    tsconfigPaths: true,
   },
 });
