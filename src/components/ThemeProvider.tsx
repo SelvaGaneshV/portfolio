@@ -79,9 +79,12 @@ type ThemeProviderProps = {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [themeMode, setThemeMode] = useState<ThemeMode>(getStoredThemeMode);
 
-  // Apply stored theme on mount
+  // Sync state with localStorage after hydration (server renders "auto", client may differ)
   useEffect(() => {
-    updateThemeClass(themeMode);
+    const stored = getStoredThemeMode();
+    if (stored !== themeMode) {
+      setThemeMode(stored);
+    }
   }, []);
 
   // Listen for system theme changes in auto mode
