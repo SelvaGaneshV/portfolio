@@ -79,6 +79,11 @@ type ThemeProviderProps = {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [themeMode, setThemeMode] = useState<ThemeMode>(getStoredThemeMode);
 
+  // Apply stored theme on mount
+  useEffect(() => {
+    updateThemeClass(themeMode);
+  }, []);
+
   // Listen for system theme changes in auto mode
   useEffect(() => {
     if (themeMode !== "auto") return;
