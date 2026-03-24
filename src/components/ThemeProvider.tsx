@@ -1,4 +1,5 @@
 import { createClientOnlyFn, createIsomorphicFn } from "@tanstack/react-start";
+import { getCookie } from "@tanstack/react-start/server";
 import {
   createContext,
   ReactNode,
@@ -19,20 +20,20 @@ const isThemeMode = (value: unknown): value is ThemeMode =>
 /* ------------------ Storage ------------------ */
 
 const getStoredThemeMode = createIsomorphicFn()
-  .server((): ThemeMode => "auto")
+  .server((): ThemeMode => {
+    const stored = getCookie(themeKey);
+    return isThemeMode(stored) ? stored : "auto";
+  })
   .client((): ThemeMode => {
-    try {
-      const stored = localStorage.getItem(themeKey);
-      return isThemeMode(stored) ? stored : "auto";
-    } catch {
-      return "auto";
-    }
+    const match = document.cookie.match(
+      new RegExp(`(?:^|; )${themeKey}=([^;]*)`),
+    );
+    const stored = match ? decodeURIComponent(match[1]) : null;
+    return isThemeMode(stored) ? stored : "auto";
   });
 
 const setStoredThemeMode = createClientOnlyFn((theme: ThemeMode) => {
-  try {
-    localStorage.setItem(themeKey, theme);
-  } catch {}
+  document.cookie = `${themeKey}=${theme}; path=/; max-age=31536000; SameSite=Strict`;
 });
 
 /* ------------------ System Theme ------------------ */
