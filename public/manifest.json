@@ -1,17 +1,29 @@
 {
   "short_name": "Selva Ganesh V",
-  "name": "Selva Ganesh V - Full Stack Developer Portfolio",
-  "description": "Full Stack Developer specializing in React, TypeScript, Node.js, and modern web technologies. View my projects, experience, and skills.",
+  "name": "Selva Ganesh V - Software Engineer Portfolio",
+  "description": "Software Engineer building a low-code platform at Torus Innovations. Specializing in React, TypeScript, and modern web technologies.",
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "16x16 32x32 48x48",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#1c1c22",
+  "background_color": "#1c1c22",
   "categories": ["portfolio", "developer", "web development"]
 }

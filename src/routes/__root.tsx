@@ -39,6 +39,12 @@ export const Route = createRootRoute({
       },
       {
         name: "theme-color",
+        media: "(prefers-color-scheme: light)",
+        content: "#ffffff",
+      },
+      {
+        name: "theme-color",
+        media: "(prefers-color-scheme: dark)",
         content: "#000000",
       },
       {
@@ -67,6 +73,26 @@ export const Route = createRootRoute({
         content: "Selva Ganesh V Portfolio",
       },
       {
+        property: "og:image",
+        content: "https://selvaganeshv.vercel.app/og-image.png",
+      },
+      {
+        property: "og:image:alt",
+        content: "Selva Ganesh V - Software Engineer Portfolio",
+      },
+      {
+        property: "og:image:type",
+        content: "image/png",
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
+      },
+      {
         name: "twitter:card",
         content: "summary_large_image",
       },
@@ -88,8 +114,12 @@ export const Route = createRootRoute({
         content: "@selvaganeshv",
       },
       {
-        name: "linkedin:profile",
-        content: "selvaganeshv",
+        name: "twitter:image",
+        content: "https://selvaganeshv.vercel.app/og-image.png",
+      },
+      {
+        name: "twitter:image:alt",
+        content: "Selva Ganesh V - Software Engineer Portfolio",
       },
     ],
     links: [
@@ -103,7 +133,18 @@ export const Route = createRootRoute({
       },
       {
         rel: "icon",
+        href: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        rel: "icon",
         href: "/favicon.ico",
+        sizes: "48x48",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: "/apple-touch-icon.png",
+        sizes: "180x180",
       },
       {
         rel: "canonical",
@@ -117,28 +158,67 @@ export const Route = createRootRoute({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Selva Ganesh V",
-          url: "https://selvaganeshv.vercel.app",
-          jobTitle: "Full Stack Developer",
-          description:
-            "Full Stack Developer specializing in React, TypeScript, Node.js, and modern web technologies",
-          sameAs: [
-            import.meta.env.VITE_GITHUB_URL,
-            import.meta.env.VITE_LINKEDIN_URL,
-          ],
-          knowsAbout: [
-            "React",
-            "TypeScript",
-            "Node.js",
-            "JavaScript",
-            "Web Development",
-            "Frontend Development",
-            "Backend Development",
-          ],
-        }),
+        children: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Selva Ganesh V",
+            url: "https://selvaganeshv.vercel.app",
+            image: "https://selvaganeshv.vercel.app/og-image.png",
+            jobTitle: "Software Engineer",
+            description:
+              "Software Engineer building a low-code platform at Torus Innovations. Specializing in React, TypeScript, and modern web technologies.",
+            worksFor: {
+              "@type": "Organization",
+              name: "Torus Innovations",
+            },
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Tirunelveli",
+              addressRegion: "Tamil Nadu",
+              addressCountry: "IN",
+            },
+            sameAs: [
+              import.meta.env.VITE_GITHUB_URL,
+              import.meta.env.VITE_LINKEDIN_URL,
+            ].filter(Boolean),
+            knowsAbout: [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "React Native",
+              "TailwindCSS",
+              "Vite",
+              "TanStack Router",
+              "TanStack Start",
+              "TanStack Query",
+              "Nest.js",
+              "Hono",
+              "Microservices",
+              "Drizzle ORM",
+              "SQLite",
+              "Redis",
+              "Socket.io",
+              "Web Development",
+              "Frontend Development",
+              "Backend Development",
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Selva Ganesh V Portfolio",
+            url: "https://selvaganeshv.vercel.app",
+            description:
+              "Portfolio of Selva Ganesh V, Software Engineer specializing in React, TypeScript, and modern web technologies.",
+            author: {
+              "@type": "Person",
+              name: "Selva Ganesh V",
+            },
+          },
+        ]),
       },
       {
         children: `(function(){try{var t=localStorage.getItem('theme')||'auto';var v=['light','dark','auto'].includes(t)?t:'auto';if(v==='auto'){var a=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.classList.add(a,'auto')}else{document.documentElement.classList.add(v)}}catch(e){var a=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.classList.add(a,'auto')}})()`,
