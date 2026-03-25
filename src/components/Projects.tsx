@@ -1,10 +1,10 @@
 import { Github, Globe, Linkedin } from "lucide-react";
 import { ReactNode } from "react";
+import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -21,6 +21,8 @@ type ProjectBlockType = {
   title: string;
   content: string;
   icon?: string;
+  tags?: string[];
+  status?: string;
   links?: LinkType;
 };
 
@@ -29,9 +31,20 @@ type ProjectsType = ProjectBlockType[];
 const projects: ProjectsType = [
   {
     title: "Torus",
-    icon: "https://toruslowcode.com/wp-content/uploads/2023/03/logo-new.svg",
+
     content:
-      "Torus Is A General Purpose, Enterprise Grade, Citizenscale Low Code Application Development Platform That Delivers No Lock In Sourcecode Available Beautiful Web & Mobile Application",
+      "Enterprise-grade low-code platform for building web & mobile apps with no vendor lock-in. Sourcecode-available, citizen-scale development.",
+    tags: [
+      "React",
+      "React flow",
+      "WYSWYG",
+      "Vite",
+      "TypeScript",
+      "NestJS",
+      "Redis",
+      "MongoDB",
+    ],
+    status: "Live",
     links: [
       {
         link: "https://toruslowcode.com/",
@@ -49,7 +62,9 @@ const projects: ProjectsType = [
   {
     title: "ColorCraft Paint Visualizer",
     content:
-      "A web application for visualizing paint colors on building regions with somewhat realistic texture preservation.",
+      "Web app for visualizing paint colors on building regions with realistic texture preservation.",
+    tags: ["React", "Canvas API", "Vercel"],
+    status: "Live",
     links: [
       {
         link: "https://paint-visualizer-chi.vercel.app/",
@@ -67,6 +82,16 @@ const projects: ProjectsType = [
     title: "Vezal.db",
     content:
       "Visual database exploration with ER diagrams and table views. Built for developers who need to move fast.",
+    tags: [
+      "React",
+      "TanStack Start",
+      "Hono",
+      "Postgres",
+      "TypeScript",
+      "Drizzle",
+      "Turborepo",
+    ],
+    status: "In Progress",
   },
 ];
 
@@ -74,13 +99,13 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10"
+      className="mx-auto flex max-w-5xl flex-col gap-6 px-4"
     >
-      <div className="mb-6">
+      <div className="text-start">
         <h2 className="text-2xl font-semibold sm:text-3xl">Projects</h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, idx) => (
           <ProjectBlock key={idx} {...project} />
         ))}
@@ -91,15 +116,46 @@ function Projects() {
 
 function ProjectBlock(section: ProjectBlockType) {
   return (
-    <Card className="flex h-full w-full  flex-col   transition-colors duration-200 hover:border-primary/20">
-      <CardHeader className="space-y-2">
-        <CardTitle className="text-lg font-semibold">{section.title}</CardTitle>
+    <Card className="flex h-full w-full flex-col transition-all duration-200 hover:border-primary/40 hover:shadow-md">
+      <CardHeader className="space-y-3">
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex items-center gap-3">
+            {section.icon && (
+              <img
+                src={section.icon}
+                alt={`${section.title} logo`}
+                className="h-6 w-6 rounded object-contain"
+              />
+            )}
+            <CardTitle className="text-base font-semibold sm:text-lg">
+              {section.title}
+            </CardTitle>
+          </div>
+          {section.status && (
+            <Badge variant="secondary" className="shrink-0 text-xs">
+              {section.status}
+            </Badge>
+          )}
+        </div>
       </CardHeader>
 
-      <CardContent className="flex-1">
-        <CardDescription className="text-sm leading-relaxed">
+      <CardContent className="flex flex-1 flex-col gap-4">
+        <p className="text-sm leading-relaxed text-muted-foreground">
           {section.content}
-        </CardDescription>
+        </p>
+        {section.tags && section.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {section.tags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="outline"
+                className="px-2 py-0.5 text-xs transition-colors hover:bg-accent hover:text-accent-foreground"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
       </CardContent>
 
       <CardFooter className="flex gap-2">

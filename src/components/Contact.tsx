@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 function Contact() {
   return (
-    <footer id="contact" className="mx-auto max-w-5xl px-4 py-10">
+    <footer id="contact" className="mx-auto max-w-5xl px-4">
       <div className="grid gap-8 sm:gap-10 md:grid-cols-3">
         <div>
           <h2 className="text-xl font-semibold">Selva Ganesh</h2>

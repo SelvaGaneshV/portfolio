@@ -1,7 +1,6 @@
 import { Briefcase, Calendar } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Separator } from "./ui/separator";
 type ResponsibilityItem = {
   content: string;
   className: string;
@@ -212,7 +211,7 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10"
+      className="mx-auto flex max-w-5xl flex-col gap-6 px-4"
     >
       <div className="text-start">
         <h2 className="text-2xl font-semibold sm:text-3xl">Experience</h2>
@@ -223,7 +222,6 @@ function Experience() {
           <ExperienceBlock key={idx} {...experience} />
         ))}
       </div>
-      <Separator />
     </section>
   );
 }
