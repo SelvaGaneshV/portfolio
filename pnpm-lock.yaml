@@ -17,9 +17,6 @@ importers:
       '@tanstack/react-start':
         specifier: ^1.167.12
         version: 1.167.12(crossws@0.4.4(srvx@0.11.13))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(vite@8.0.3(@types/node@24.3.0)(esbuild@0.27.4)(jiti@2.6.1)(terser@5.43.1)(tsx@4.21.0))
-      '@tanstack/router-plugin':
-        specifier: ^1.167.8
-        version: 1.167.8(@tanstack/react-router@1.168.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(vite@8.0.3(@types/node@24.3.0)(esbuild@0.27.4)(jiti@2.6.1)(terser@5.43.1)(tsx@4.21.0))
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(react@19.2.4)
