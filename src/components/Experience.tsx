@@ -33,13 +33,55 @@ const EXP: ExperienceType[] = [
     },
     responsibilty: [
       [
-        "Contributed to a ",
+        "Core contributor to the ",
         {
-          content: "WYSIWYG editor",
+          content: "next-generation Torus Low Code Platform",
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        " with advanced capabilities such as ",
+        ", an AI-enabled, event-driven application development platform used by ",
+        {
+          content: "GSS Tech Group",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " to build and deploy banking and payment solutions for ",
+        {
+          content: "financial institutions across the UAE, Kenya, and 10+ countries",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        ".",
+      ],
+      [
+        "Built the platform's ",
+        {
+          content: "entire frontend",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        ", enabling users to visually design applications across ",
+        {
+          content: "multiple fabric types",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " (UI, Data, Process, API, and Integration fabrics), each containing domain-specific sub-fabrics with independently managed artifacts and custom handling logic.",
+      ],
+      [
+        "Developed the platform's ",
+        {
+          content: "WYSIWYG layout editor",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " with ",
+        {
+          content: "drag-and-drop",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        ", ",
         {
           content: "resize",
           className:
@@ -47,7 +89,7 @@ const EXP: ExperienceType[] = [
         },
         ", ",
         {
-          content: "drag",
+          content: "alignment guides",
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
@@ -57,7 +99,7 @@ const EXP: ExperienceType[] = [
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        " for rich web editing.",
+        ", used to build 10+ production screens for client banking applications.",
       ],
       [
         "Integrated ",
@@ -68,11 +110,26 @@ const EXP: ExperienceType[] = [
         },
         " to design and orchestrate ",
         {
-          content: "process flows",
+          content: "process flows and event bindings",
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        " used by generated applications.",
+        ", enabling dynamic runtime interactions in generated applications.",
+      ],
+      [
+        "Implemented ",
+        {
+          content: "graph-processing algorithms",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " including circular dependency detection, cross-node validation, and nested mutation handling, ",
+        {
+          content: "eliminating invalid execution states",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " across the workflow engine.",
       ],
       [
         "Implemented ",
@@ -90,61 +147,58 @@ const EXP: ExperienceType[] = [
         " and reduce manual integration work.",
       ],
       [
-        "Created a ",
+        "Designed a ",
+        {
+          content: "schema-driven plugin system",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " allowing administrators to define new workflow node types via ",
+        {
+          content: "JSON schema uploads",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        ", consumed by a ",
         {
           content: "dynamic JSON editor",
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        " supporting custom input types like ",
+        " with custom input types like ",
         {
           content: "dropdowns",
           className:
-            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         ", ",
         {
           content: "icon search",
           className:
-            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
         " and ",
         {
           content: "file upload",
           className:
-            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        ".",
+        " — enabling runtime extensibility without frontend redeployment.",
       ],
       [
-        "Implemented ",
+        "Built ",
         {
-          content: "dynamic validation",
-          className:
-            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
-        },
-        " for nested user data structures using ",
-        {
-          content: "NestJS",
+          content: "real-time multi-user collaboration",
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        ".",
-      ],
-      [
-        "Used ",
+        " with Socket.IO, implementing ",
         {
-          content: "Socket.IO",
+          content: "artifact-level locking",
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        " to implement ",
-        {
-          content: "artifact locking",
-          className:
-            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
-        },
-        ", preventing concurrent edit conflicts.",
+        " across 20+ concurrently edited artifacts, enabling conflict-free editing across all fabric types.",
       ],
       [
         "Designed and delivered ",
@@ -153,16 +207,34 @@ const EXP: ExperienceType[] = [
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        " with strict tenant isolation and access controls.",
-      ],
-      [
-        "Implemented security measures for ",
+        " with strict tenant isolation, ",
         {
-          content: "multi-tenant users",
+          content: "authentication",
           className:
             "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
         },
-        ", including authentication and authorization safeguards.",
+        " and ",
+        {
+          content: "authorization",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " safeguards.",
+      ],
+      [
+        "Authored and maintained ",
+        {
+          content: "35+ RESTful APIs",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " with NestJS for artifact management, workflow orchestration, ",
+        {
+          content: "dynamic validation",
+          className:
+            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+        },
+        " and cross-system integrations.",
       ],
       [
         "Contributed to an in-platform ",
@@ -173,46 +245,13 @@ const EXP: ExperienceType[] = [
         },
         " to validate and debug user-generated APIs.",
       ],
-      [
-        "Implemented event binding for UI elements via ",
-        {
-          content: "React Flow",
-          className:
-            "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
-        },
-        ", enabling dynamic runtime interactions in generated apps.",
-      ],
-      [
-        "Authored and maintained core backend APIs for artifact management — including ",
-        {
-          content: "fetching",
-          className:
-            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
-        },
-        ", ",
-        {
-          content: "saving",
-          className:
-            "text-primary font-semibold hover:text-primary/80 font-semibold hover:underline transition-colors duration-150",
-        },
-        " and ",
-        {
-          content: "validation",
-          className:
-            "text-primary font-semibold hover:text-primary/80 font-semibold  hover:underline transition-colors duration-150",
-        },
-        " across tenants.",
-      ],
     ],
   },
 ];
 
 function Experience() {
   return (
-    <section
-      id="experience"
-      className="mx-auto flex max-w-5xl flex-col gap-6 px-4"
-    >
+    <section id="experience" className="mx-auto flex max-w-5xl flex-col gap-6 px-4">
       <div className="text-start">
         <h2 className="text-2xl font-semibold sm:text-3xl">Experience</h2>
       </div>
@@ -228,13 +267,11 @@ function Experience() {
 
 function ExperienceBlock(block: ExperienceType) {
   return (
-    <Card className="w-full border-none shadow-none  ">
+    <Card className="w-full border-none shadow-none">
       <CardHeader>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex-1">
-            <CardTitle className="mb-2 text-xl sm:text-2xl">
-              {block.postion}
-            </CardTitle>
+            <CardTitle className="mb-2 text-xl sm:text-2xl">{block.postion}</CardTitle>
 
             <div className="flex items-center gap-2">
               <Briefcase className="h-4 w-4 text-muted-foreground" />
