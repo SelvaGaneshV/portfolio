@@ -26,7 +26,7 @@ const EXP: ExperienceType[] = [
   {
     postion: "Software Engineer",
     from: "Oct,2023",
-    to: "present",
+    to: "Apr 2026",
     company: {
       link: "https://toruslowcode.com/",
       name: "Torus Innovations",
