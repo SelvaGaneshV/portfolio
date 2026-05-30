@@ -86,7 +86,7 @@ const projects: ProjectsType = [
       "React",
       "TanStack Start",
       "Hono",
-      "Postgres",
+      "PostgresSQL",
       "TypeScript",
       "Drizzle",
       "Turborepo",
