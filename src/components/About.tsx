@@ -48,9 +48,10 @@ function About() {
 
         <div className="col-span-1 text-start md:row-span-3">
           <p className="text-justify text-base leading-7">
-            Hi, I’m a developer 👨‍💻 currently building a low-code platform at{" "}
-            <b>Torus Innovations</b>. I love turning ideas into products that
-            make everyday work easier and more enjoyable 🚀.
+  Hi, I’m a full-stack developer 👨‍💻 specializing in React, Next.js, React
+  Native, and NestJS. I enjoy building scalable applications, crafting
+  intuitive user experiences, and turning ideas into products that solve
+  real-world problems 🚀.
           </p>
 
           <br />
@@ -62,7 +63,7 @@ function About() {
 
           <div className="mt-3 flex items-center gap-1 text-sm text-accent-foreground/60">
             <MapPin size="0.875rem" />
-            <span>Tirunelveli, Tamil Nadu, India</span>
+            <span>Chennai, Tamil Nadu, India</span>
           </div>
         </div>
 
