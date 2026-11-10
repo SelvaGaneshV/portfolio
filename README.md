@@ -17,8 +17,8 @@ Personal portfolio website built with React 19 and TanStack Start, deployed on V
 ## Sections
 
 - **About** — Intro, skills, CV download
-- **Experience** — Software Engineer at Torus Innovations (Oct 2023 – present)
-- **Projects** — Torus low-code platform, ColorCraft Paint Visualizer, Vezal.db
+- **Experience** — Software Development Engineer at AGG Technology (Aug 2026 – present); Software Engineer at Torus Innovations (Oct 2023 – Apr 2026)
+- **Projects** — Torus low-code platform, ColorCraft Paint Visualizer, Vezal.db, Overly
 - **Contact** — Email, phone, GitHub, LinkedIn
 
 ## Getting Started

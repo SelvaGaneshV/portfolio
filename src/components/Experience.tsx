@@ -22,7 +22,64 @@ type ExperienceType = {
   responsibilty: ResponsibilityType;
 };
 
+const highlight = (content: string): ResponsibilityItem => ({
+  content,
+  className:
+    "text-primary font-semibold hover:text-primary/80 hover:underline transition-colors duration-150",
+});
+
 const EXP: ExperienceType[] = [
+  {
+    postion: "Software Development Engineer",
+    from: "Aug 2026",
+    to: "Present",
+    company: {
+      link: "https://aggtechnology.in/",
+      name: "AGG Technology Private Limited",
+    },
+    responsibilty: [
+      [
+        "Developing a multi-sport tournament management platform across ",
+        highlight("four TypeScript applications"),
+        " — a NestJS backend, two Next.js web apps, and an Expo/React Native mobile app — covering live scoring, registrations, auctions, and leaderboards.",
+      ],
+      [
+        "Hardened authentication platform-wide with global JWT, tournament-role, and rate-limiting guard chains across ",
+        highlight("35 NestJS controllers"),
+        ", adding single-use refresh-token rotation and cross-tab token refresh via Web Locks and BroadcastChannel.",
+      ],
+      [
+        "Architected an external developer API of ",
+        highlight("31 REST endpoints"),
+        " with SHA-256-hashed keys, path/method scopes, monthly quotas, and usage metering — validated by 57 Jest tests and external-only OpenAPI documentation.",
+      ],
+      [
+        "Eliminated concurrent score-write races across four sport engines with TypeORM transactions and ",
+        highlight("11 pessimistic row locks"),
+        ", replacing 1-second polling with per-match timers over a singleton Socket.IO gateway.",
+      ],
+      [
+        "Delivered tournament registration end-to-end — a NestJS cart service, a Next.js wizard with DUPR OAuth autofill and PDF receipts, and a React Native checkout — backed by a ",
+        highlight("391-line PostgreSQL recursive CTE"),
+        " that deduplicates players across three identity schemes.",
+      ],
+      [
+        "Engineered an ",
+        highlight("offline-capable React Native data layer"),
+        " with TanStack Query persistence, a typed axios client over 41 REST endpoints, and Socket.IO-driven live-score cache invalidation across a 48-route app.",
+      ],
+      [
+        "Built a real-time cricket and pickleball auction platform — a ",
+        highlight("three.js WebGL arena"),
+        ", public LED stage, and organizer console wired to 9 WebSocket events with an 8-second bid watchdog.",
+      ],
+      [
+        "Shipped tournament email broadcasting with recipient dedupe, HTML sanitization, and chunked SMTP delivery, alongside a ",
+        highlight("config-driven leaderboard engine with 18 ranking criteria"),
+        ".",
+      ],
+    ],
+  },
   {
     postion: "Software Engineer",
     from: "Oct 2023",

@@ -81,17 +81,44 @@ const projects: ProjectsType = [
   {
     title: "Vezal.db",
     content:
-      "Visual database exploration with ER diagrams and table views. Built for developers who need to move fast.",
+      "Visual database exploration with an interactive ER diagram canvas (React Flow + Dagre), a three-level PostgreSQL explorer, and a streaming AI assistant that drafts SQL/DDL from live schema metadata.",
     tags: [
       "React",
-      "TanStack Start",
+      "TanStack Router",
       "Hono",
-      "PostgresSQL",
+      "PostgreSQL",
       "TypeScript",
       "Drizzle",
+      "Vercel AI SDK",
       "Turborepo",
     ],
     status: "In Progress",
+  },
+  {
+    title: "Overly",
+    content:
+      "Transparent AI desktop assistant that floats above your desktop, stays invisible on screen shares, and collapses into a bubble when you need space. Multi-model chat via OpenRouter, screenshot vision, and permission-gated terminal help.",
+    tags: [
+      "Electron",
+      "React",
+      "TypeScript",
+      "Hono",
+      "OpenRouter",
+      "Turborepo",
+    ],
+    status: "Released",
+    links: [
+      {
+        link: `${import.meta.env.VITE_GITHUB_URL}overly-chat`,
+        icon: <Github />,
+        title: "repo",
+      },
+      {
+        link: `${import.meta.env.VITE_GITHUB_URL}overly-chat/releases`,
+        icon: <Globe />,
+        title: "downloads",
+      },
+    ],
   },
 ];
 
