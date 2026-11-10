@@ -30,6 +30,27 @@ type ProjectsType = ProjectBlockType[];
 
 const projects: ProjectsType = [
   {
+    title: "Rizzfitt",
+    content:
+      "Multi-sport tournament management platform — live scoring, registrations, auctions, and leaderboards across player, admin, and mobile apps.",
+    tags: [
+      "React",
+      "Next.js",
+      "React Native",
+      "NestJS",
+      "PostgreSQL",
+      "Socket.IO",
+    ],
+    status: "Live",
+    links: [
+      {
+        link: "https://tournament.rizzfitt.com/",
+        icon: <Globe />,
+        title: "tournament.rizzfitt.com",
+      },
+    ],
+  },
+  {
     title: "Torus",
 
     content:
